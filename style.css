@@ -17,13 +17,19 @@ input{
   background-color: red;
   padding: 10px 15px;
 }
+.todo-input-grid,
 .todo-list{
-  margin-top: 10px;
   display: grid; 
   grid-template-columns: 200px 135px 85px; /*This is how many colums in the grid*/
   justify-content: space-between;
   row-gap: 8px;
   align-items: baseline;
+  column-gap: 10px;
+}
+
+.todo-input-grid{
+  margin-bottom: 10px;
+  align-items: stretch;
 }
 
 @media (max-width:500px) {
