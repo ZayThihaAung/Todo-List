@@ -18,6 +18,7 @@ input{
   padding: 10px 15px;
 }
 .todo-list{
+  margin-top: 10px;
   display: grid; 
   grid-template-columns: 200px 135px 85px; /*This is how many colums in the grid*/
   justify-content: space-between;
