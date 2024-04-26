@@ -1,6 +1,9 @@
 const todoName = document.querySelector('.todoName');
 const todoDate = document.querySelector('.todoDate');
 
+const todoList = JSON.parse(localStorage.getItem('todoList')) || [];
+renderTodoList();
+
 function renderTodoList() {
   let todoListHTML = '';
   for (let i = 0; i < todoList.length; i++) {
@@ -14,12 +17,12 @@ function renderTodoList() {
           renderTodoList();
         '>Delete</button>`;
     todoListHTML += html;
+    console.log(todoList);
   }
   
   document.querySelector('.todo-list').innerHTML = todoListHTML;
 }
 
-const todoList = [];
 function addTodo() {
   const todoNameValue = todoName.value;
   const todoDateValue = todoDate.value;
@@ -31,6 +34,9 @@ function addTodo() {
 
   todoName.value = '';
   todoDate.value = '';
+  
+  const todoListString = JSON.stringify(todoList);
+  localStorage.setItem('todoList', todoListString);
 
   renderTodoList();
 }
