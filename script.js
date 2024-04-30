@@ -6,19 +6,17 @@ renderTodoList();
 
 function renderTodoList() {
   let todoListHTML = '';
-  for (let i = 0; i < todoList.length; i++) {
-    const todoObj = todoList[i];
+  todoList.forEach((todoObj, index) => {
     const {name, date} = todoObj; // short cut of getting obj properties
     const html = `
         <div>${name}</div>
         <div>${date}</div> 
         <button class='deleteBtn' onclick='
-          todoList.splice(${i}, 1);
+          todoList.splice(${index}, 1);
           renderTodoList();
         '>Delete</button>`;
     todoListHTML += html;
-    console.log(todoList);
-  }
+  })
   
   document.querySelector('.todo-list').innerHTML = todoListHTML;
 }
