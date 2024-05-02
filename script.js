@@ -21,6 +21,11 @@ function renderTodoList() {
   document.querySelector('.todo-list').innerHTML = todoListHTML;
 }
 
+document.querySelector('.addBtn')
+  .addEventListener('click', () => {
+    addTodo();
+})
+
 function addTodo() {
   const todoNameValue = todoName.value;
   const todoDateValue = todoDate.value;
